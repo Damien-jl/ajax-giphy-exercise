@@ -23,15 +23,17 @@ function newGif(response) {
     if (numResults) {
         let newCol = document.createElement('div');
         let newGif = document.createElement('img');
+        newCol.className = 'col-md-4';
         let random = Math.floor(Math.random() * numResults);
-        newGif.src = response.data[random].images.original.url
+        newGif.src = response.data[random].images.original.url;
+        newGif.className = 'w-100'
         newCol.append(newGif);
         gifs.append(newCol);
     }
 }
 $("#dlt-btn").on("click", function() {
-    $("#imgs").empty();
-});
+    $("#imgs").remove();
+  });
 
 
 
